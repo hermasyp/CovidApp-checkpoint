@@ -1,4 +1,4 @@
-package com.catnip.covidapp.ui.splashscreen
+package com.catnip.covidapp.ui.home.covidspread
 
 import com.catnip.covidapp.base.BaseContract
 
@@ -6,14 +6,11 @@ import com.catnip.covidapp.base.BaseContract
 Written with love by Muhammad Hermas Yuda Pamungkas
 Github : https://github.com/hermasyp
  **/
-interface SplashScreenContract {
+interface CovidSpreadContract {
     interface ViewModel : BaseContract.ViewModel{
-        fun getSyncData()
+
     }
     interface View : BaseContract.View{
-        fun navigateToLogin()
-        fun navigateToHome()
-        fun checkLogin()
-        fun deleteSessionLogin()
+
     }
 }
