@@ -8,9 +8,12 @@ Github : https://github.com/hermasyp
  **/
 interface SplashScreenContract {
     interface ViewModel : BaseContract.ViewModel{
-
+        fun getSyncData()
     }
     interface View : BaseContract.View{
-
+        fun navigateToLogin()
+        fun navigateToHome()
+        fun checkLogin()
+        fun deleteSessionLogin()
     }
 }
