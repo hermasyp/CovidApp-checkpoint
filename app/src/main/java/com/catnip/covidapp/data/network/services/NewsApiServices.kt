@@ -19,7 +19,7 @@ Github : https://github.com/hermasyp
  **/
 interface NewsApiServices {
 
-    @GET("search/")
+    @GET("search")
     suspend fun getNews(
         @Query("q") query : String,
         @Query("api-key") apiKey : String = BuildConfig.API_KEY_GUARDIAN_NEWS,
