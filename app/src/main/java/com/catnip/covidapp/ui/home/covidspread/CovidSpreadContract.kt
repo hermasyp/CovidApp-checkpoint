@@ -20,5 +20,8 @@ interface CovidSpreadContract {
         fun setupList()
         fun setListData(data : List<TotalCaseProvinceResponse>)
         fun bindDataHeader(data : TotalCaseResponse)
+        fun setClickEventYoutubeHeader()
+        fun setupYoutube()
+        fun playVideo()
     }
 }

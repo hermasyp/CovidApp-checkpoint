@@ -11,4 +11,6 @@ object Constants {
 
     const val TAG_FRAGMENT_COVID_SPREAD = "TAG_FRAGMENT_COVID_SPREAD"
     const val TAG_FRAGMENT_COVID_NEWS = "TAG_FRAGMENT_COVID_NEWS"
+
+    const val VIDEO_ID_KOMPAS_LIVE = "8o49U8xAfZ4"
 }

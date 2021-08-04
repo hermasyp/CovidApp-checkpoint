@@ -15,11 +15,20 @@ import com.catnip.covidapp.data.network.entity.responses.kawalcorona.TotalCasePr
 import com.catnip.covidapp.data.network.entity.responses.kawalcorona.TotalCaseResponse
 import com.catnip.covidapp.data.network.services.CovidApiServices
 import com.catnip.covidapp.databinding.FragmentCovidSpreadBinding
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.catnip.covidapp.utils.Constants
+
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerFullScreenListener
+
 
 class CovidSpreadFragment : Fragment(), CovidSpreadContract.View {
     private lateinit var binding: FragmentCovidSpreadBinding
     private lateinit var viewModel: CovidSpreadViewModel
     private lateinit var adapter: CasesListAdapter
+
+    private lateinit var player: YouTubePlayer
+    private var isYoutubeHeaderExpanded = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +48,8 @@ class CovidSpreadFragment : Fragment(), CovidSpreadContract.View {
     override fun initView() {
         setupSwipeRefresh()
         setupList()
+        setupYoutube()
+        setClickEventYoutubeHeader()
     }
 
     override fun initViewModel() {
@@ -90,12 +101,7 @@ class CovidSpreadFragment : Fragment(), CovidSpreadContract.View {
         binding.tvErrorMessage.text = msg
     }
 
-    override fun setupSwipeRefresh() {
-        binding.srlContent.setOnRefreshListener {
-            binding.srlContent.isRefreshing = false
-            viewModel.getCovidSpreadData()
-        }
-    }
+
 
     override fun setupList() {
         adapter = CasesListAdapter {}
@@ -118,6 +124,66 @@ class CovidSpreadFragment : Fragment(), CovidSpreadContract.View {
             getString(R.string.text_total_treated_case, data.dirawat)
         binding.tvTotalDeath.text =
             getString(R.string.text_total_death_case, data.meninggal)
+    }
+
+
+    override fun setClickEventYoutubeHeader() {
+        binding.cvHeaderYoutubePlayer.setOnClickListener {
+            if(isYoutubeHeaderExpanded){
+                //tutup
+                isYoutubeHeaderExpanded = false
+                binding.youtubePlayerView.visibility = View.GONE
+                binding.tvHeaderYoutubePlayer.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_collapse,0)
+                player.pause()
+            }else{
+                //buka
+                isYoutubeHeaderExpanded = true
+                binding.youtubePlayerView.visibility = View.VISIBLE
+                binding.tvHeaderYoutubePlayer.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_expand,0)
+                playVideo()
+            }
+
+        }
+    }
+
+    override fun setupSwipeRefresh() {
+        binding.srlContent.setOnRefreshListener {
+            binding.srlContent.isRefreshing = false
+            viewModel.getCovidSpreadData()
+            player.pause()
+        }
+    }
+
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
+        if(hidden){
+            player.pause()
+        }
+    }
+
+    override fun setupYoutube() {
+        lifecycle.addObserver(binding.youtubePlayerView)
+        binding.youtubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener(){
+            override fun onReady(youTubePlayer: YouTubePlayer) {
+                super.onReady(youTubePlayer)
+                this@CovidSpreadFragment.player = youTubePlayer
+            }
+        })
+        binding.youtubePlayerView.addFullScreenListener(object : YouTubePlayerFullScreenListener{
+            override fun onYouTubePlayerEnterFullScreen() {
+                //hide toolbar
+
+            }
+
+            override fun onYouTubePlayerExitFullScreen() {
+                TODO("Not yet implemented")
+                //show toolbar
+            }
+        })
+    }
+
+    override fun playVideo() {
+        player.loadVideo(Constants.VIDEO_ID_KOMPAS_LIVE,0F)
     }
 
 }

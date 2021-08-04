@@ -8,107 +8,204 @@
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/srl_content"
-        android:visibility="gone"
-        tools:visibility="visible"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv_header_covid_info"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_8sdp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="wrap_content">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_header_covid_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_16sdp">
+                    android:layout_margin="@dimen/_8sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <TextView
-                        android:id="@+id/tv_national_info"
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/text_header_nationality"
-                        android:textSize="@dimen/_18ssp"
-                        android:textStyle="bold"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_margin="@dimen/_8sdp">
 
-                    <TextView
-                        android:id="@+id/tv_total_positive"
+                        <TextView
+                            android:id="@+id/tv_national_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_header_nationality"
+                            android:textSize="@dimen/_18ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_total_positive"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/_12ssp"
+                            app:drawableStartCompat="@drawable/ic_covid"
+                            app:drawableTint="@color/red_material"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_national_info"
+                            tools:text="328.000 Positive" />
+
+                        <TextView
+                            android:id="@+id/tv_total_cured"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/_12ssp"
+                            app:drawableStartCompat="@drawable/ic_covid"
+                            app:drawableTint="@color/green_material"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_total_positive"
+                            tools:text="308.000 Recovered" />
+
+                        <TextView
+                            android:id="@+id/tv_total_death"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/_12ssp"
+                            app:drawableStartCompat="@drawable/ic_covid"
+                            app:drawableTint="@color/gray_material"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_total_cured"
+                            tools:text="8.000 Death" />
+
+                        <TextView
+                            android:id="@+id/tv_total_treated"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="4dp"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/_12ssp"
+                            app:drawableStartCompat="@drawable/ic_hospital"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_total_death"
+                            tools:text="308.000 Treated" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_header_youtube_player"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_header_covid_info">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:drawablePadding="@dimen/_4sdp"
-                        android:gravity="center_vertical"
-                        android:textSize="@dimen/_12ssp"
-                        app:drawableStartCompat="@drawable/ic_covid"
-                        app:drawableTint="@color/red_material"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_national_info"
-                        tools:text="328.000 Positive" />
+                        android:layout_margin="@dimen/_8sdp">
 
-                    <TextView
-                        android:id="@+id/tv_total_cured"
+                        <ImageView
+                            android:id="@+id/iv_icon_youtube"
+                            android:layout_width="@dimen/_16sdp"
+                            android:layout_height="@dimen/_16sdp"
+                            android:src="@drawable/ic_tv"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_header_youtube_player"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:text="Watch Kompas News"
+                            android:textSize="@dimen/_16ssp"
+                            android:textStyle="bold"
+                            app:drawableEndCompat="@drawable/ic_expand"
+
+                            app:layout_constraintLeft_toRightOf="@id/iv_icon_youtube"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                    android:id="@+id/youtube_player_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    app:layout_constraintDimensionRatio="16:9"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_header_youtube_player" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_header_covid_province"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/youtube_player_view">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawablePadding="@dimen/_4sdp"
-                        android:gravity="center_vertical"
-                        android:textSize="@dimen/_12ssp"
-                        app:drawableStartCompat="@drawable/ic_covid"
-                        app:drawableTint="@color/green_material"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_total_positive"
-                        tools:text="308.000 Recovered" />
+                        android:layout_margin="@dimen/_8sdp">
 
-                    <TextView
-                        android:id="@+id/tv_total_death"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="@dimen/_4sdp"
-                        android:gravity="center_vertical"
-                        android:textSize="@dimen/_12ssp"
-                        app:drawableStartCompat="@drawable/ic_covid"
-                        app:drawableTint="@color/gray_material"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_total_cured"
-                        tools:text="8.000 Death" />
+                        <ImageView
+                            android:id="@+id/iv_icon_covid_province"
+                            android:layout_width="@dimen/_16sdp"
+                            android:layout_height="@dimen/_16sdp"
+                            android:src="@drawable/ic_covid"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/red_800" />
 
-                    <TextView
-                        android:id="@+id/tv_total_treated"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="4dp"
-                        android:gravity="center_vertical"
-                        android:textSize="@dimen/_12ssp"
-                        app:drawableStartCompat="@drawable/ic_hospital"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_total_death"
-                        tools:text="308.000 Treated" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/tv_header_covid_province"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:text="Covid data in Province"
+                            android:textSize="@dimen/_16ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toRightOf="@id/iv_icon_covid_province"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_covid_spread"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cv_header_covid_info"
-                tools:listitem="@layout/item_cases_list" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_covid_spread"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_header_covid_province"
+                    tools:listitem="@layout/item_cases_list" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <TextView
