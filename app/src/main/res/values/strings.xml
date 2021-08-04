@@ -23,4 +23,9 @@
     <string name="text_dialog_logout_task_negative">No</string>
     <string name="text_icon_menu_logout">Logout</string>
     <string name="text_logout_dialog">Do you want to Logout ?</string>
+
+    <string name="text_total_positive_case">%s Positive Cases</string>
+    <string name="text_total_recovered_case">%s Recovered</string>
+    <string name="text_total_treated_case">%s Treated</string>
+    <string name="text_total_death_case">%s Death</string>
 </resources>

@@ -5,6 +5,18 @@
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Work Project/Binar/Android Wave 7/Gold - CH 7/CovidAppBinar/app/src/main/res/layout/activity_main.xml" value="0.34923076923076923" />
+        <entry key="..\:/Work Project/Binar/Android Wave 7/Gold - CH 7/CovidAppBinar/app/src/main/res/layout/fragment_covid_news.xml" value="0.3546875" />
+        <entry key="..\:/Work Project/Binar/Android Wave 7/Gold - CH 7/CovidAppBinar/app/src/main/res/layout/fragment_covid_spread.xml" value="0.1" />
+        <entry key="..\:/Work Project/Binar/Android Wave 7/Gold - CH 7/CovidAppBinar/app/src/main/res/layout/item_cases_list.xml" value="0.3546875" />
+        <entry key="..\:/Work Project/Binar/Android Wave 7/Gold - CH 7/CovidAppBinar/app/src/main/res/menu/menu_bottom_nav_home.xml" value="0.3546875" />
+        <entry key="..\:/Work Project/Binar/Android Wave 7/Gold - CH 7/CovidAppBinar/app/src/main/res/menu/menu_homepage.xml" value="0.3546875" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
