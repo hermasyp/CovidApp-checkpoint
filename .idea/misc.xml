@@ -8,7 +8,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Work Project/Binar/Android Wave 7/Gold - CH 7/CovidAppBinar/app/src/main/res/layout/activity_login.xml" value="0.34923076923076923" />
         <entry key="..\:/Work Project/Binar/Android Wave 7/Gold - CH 7/CovidAppBinar/app/src/main/res/layout/activity_main.xml" value="0.34923076923076923" />
+        <entry key="..\:/Work Project/Binar/Android Wave 7/Gold - CH 7/CovidAppBinar/app/src/main/res/layout/activity_profile.xml" value="0.340625" />
         <entry key="..\:/Work Project/Binar/Android Wave 7/Gold - CH 7/CovidAppBinar/app/src/main/res/layout/fragment_covid_news.xml" value="0.3546875" />
         <entry key="..\:/Work Project/Binar/Android Wave 7/Gold - CH 7/CovidAppBinar/app/src/main/res/layout/fragment_covid_spread.xml" value="0.33" />
         <entry key="..\:/Work Project/Binar/Android Wave 7/Gold - CH 7/CovidAppBinar/app/src/main/res/layout/item_cases_list.xml" value="0.3546875" />

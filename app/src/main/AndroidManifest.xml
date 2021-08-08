@@ -14,9 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidApp"
         tools:targetApi="n">
+        <activity
+            android:name=".ui.profilepage.ProfileActivity"
+            android:exported="true" />
         <activity android:name=".ui.splashscreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

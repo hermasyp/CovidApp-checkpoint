@@ -28,4 +28,7 @@
     <string name="text_total_recovered_case">%s Recovered</string>
     <string name="text_total_treated_case">%s Treated</string>
     <string name="text_total_death_case">%s Death</string>
+    <string name="text_btn_save_profile">Save Profile</string>
+    <string name="title_toolbar_profile">My Profile</string>
+    <string name="text_icon_menu_profile">Profile</string>
 </resources>

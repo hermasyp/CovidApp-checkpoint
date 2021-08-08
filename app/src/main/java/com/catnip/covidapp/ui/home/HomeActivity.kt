@@ -13,6 +13,7 @@ import com.catnip.covidapp.databinding.ActivityMainBinding
 import com.catnip.covidapp.ui.home.covidnews.CovidNewsFragment
 import com.catnip.covidapp.ui.home.covidspread.CovidSpreadFragment
 import com.catnip.covidapp.ui.login.LoginActivity
+import com.catnip.covidapp.ui.profilepage.ProfileActivity
 import com.catnip.covidapp.utils.Constants
 
 class HomeActivity : AppCompatActivity() {
@@ -77,9 +78,17 @@ class HomeActivity : AppCompatActivity() {
             R.id.menu_action_logout -> {
                 showDialogLogout()
             }
+            R.id.menu_action_profile -> {
+                navigateToProfile()
+            }
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun navigateToProfile() {
+        val intent = Intent(this, ProfileActivity::class.java)
+        startActivity(intent)
     }
 
     private fun showDialogLogout() {
